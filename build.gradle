@@ -172,7 +172,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    implementation fg.deobf('curse.maven:mrcrayfishs-gun-mod-289479:4325680')
+    implementation fg.deobf('curse.maven:mrcrayfishs-gun-mod-289479:4328485')
     implementation fg.deobf('curse.maven:framework-549225:4287475')
 }
 
