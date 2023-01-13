@@ -1,8 +1,8 @@
 {
   "display": {
     "flash": {
-      "yOffset": 3.6505,
-      "zOffset": -3.81
+      "yOffset": 9.5,
+      "zOffset": -25
     }
   },
   "general": {
@@ -10,9 +10,9 @@
     "gripType": "cgm:two_handed",
     "maxAmmo": 8,
     "projectileAmount": 5,
-    "rate": 8,
+    "rate": 6,
     "recoilAdsReduction": 0.4,
-    "recoilAngle": 10.0,
+    "recoilAngle": 1.0,
     "recoilKick": 0.5,
     "reloadAmount": 1,
     "spread": 10.0
@@ -20,8 +20,8 @@
   "modules": {
     "zoom": {
       "fovModifier": 0.7,
-      "yOffset": 5.1,
-      "zOffset": 3.2
+      "yOffset": 11.1,
+      "zOffset": 1.0
     }
   },
   "projectile": {
