@@ -152,6 +152,7 @@ repositories {
     maven {
         url "https://cursemaven.com"
     }
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 }
 
 dependencies {
@@ -174,6 +175,10 @@ dependencies {
 
     implementation fg.deobf('curse.maven:mrcrayfishs-gun-mod-289479:4328485')
     implementation fg.deobf('curse.maven:framework-549225:4287475')
+
+    runtimeOnly fg.deobf('curse.maven:smoothboot-633412:4162938')
+
+//    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

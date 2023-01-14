@@ -1,6 +1,10 @@
 package com.kuver.kuversguns;
 
+import com.kuver.kuversguns.client.render.pose.LongWeaponPose;
+import com.kuver.kuversguns.client.render.pose.TestWeaponPose;
 import com.mojang.logging.LogUtils;
+import com.mrcrayfish.guns.common.GripType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -40,6 +44,8 @@ public class KuversGuns
 
 
         ItemRegistry.REGISTER.register(bus);
+        GripType.registerType(new GripType(new ResourceLocation("kuversguns", "long_weapon"), new LongWeaponPose()));
+        GripType.registerType(new GripType(new ResourceLocation("kuversguns", "test_weapon"), new TestWeaponPose()));
     }
 
     private void setup(final FMLCommonSetupEvent event)

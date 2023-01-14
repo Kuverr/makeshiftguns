@@ -13,5 +13,6 @@ public class ItemRegistry {
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, KuversGuns.MOD_ID);
 
     public static final RegistryObject<GunItem> TEST_GUN = REGISTER.register("test_gun", () -> new GunItem(new Item.Properties().stacksTo(1).tab(GunMod.GROUP)));
-    public static final RegistryObject<GunItem> BENELLIM4 = REGISTER.register("benellim4", () -> new GunItem(new Item.Properties().stacksTo(1).tab(GunMod.GROUP)));
+    public static final RegistryObject<GunItem> M1014 = REGISTER.register("m1014", () -> new GunItem(new Item.Properties().stacksTo(1).tab(GunMod.GROUP)));
+    public static final RegistryObject<GunItem> MK18 = REGISTER.register("mk18", () -> new GunItem(new Item.Properties().stacksTo(1).tab(GunMod.GROUP)));
 }

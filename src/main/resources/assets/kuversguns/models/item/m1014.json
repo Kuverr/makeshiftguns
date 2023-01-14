@@ -2,7 +2,7 @@
 	"credit": "Credit to the Timeless and Classics mod Team for their amazing work!",
 	"texture_size": [256, 256],
 	"textures": {
-		"5": "kuversguns:items/m1014_uv",
+		"5": "kuversguns:items/m1014",
 		"6": "tac:items/m1014_12_gauge",
 		"particle": "tac:items/m1014_12_gauge"
 	},
@@ -5799,7 +5799,7 @@
 			"scale": [0.55, 0.55, 0.55]
 		},
 		"firstperson_righthand": {
-			"translation": [-6, 3, -2.5]
+			"translation": [-3.5, 3, -2.5]
 		},
 		"firstperson_lefthand": {
 			"translation": [-4, 3.5, -3.25]
