@@ -7,7 +7,7 @@
   },
   "general": {
     "alwaysSpread": true,
-    "gripType": "kuversguns:long_weapon",
+    "gripType": "cgm:two_handed",
     "maxAmmo": 8,
     "projectileAmount": 5,
     "rate": 6,
