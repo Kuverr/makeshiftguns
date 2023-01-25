@@ -5,38 +5,37 @@ import com.mrcrayfish.guns.entity.GrenadeEntity;
 import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
 import com.mrcrayfish.guns.entity.ThrowableItemEntity;
 import com.mrcrayfish.guns.init.ModEntities;
-import com.mrcrayfish.guns.init.ModItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import com.kuver.makeshiftguns.Registry.ItemRegistry;
+import com.kuver.makeshiftguns.init.ItemInit;
 
-public class PipeBombEntity extends ThrowableGrenadeEntity {
+public class ThrowablePipeBombEntity extends ThrowableGrenadeEntity {
     public float rotation;
     public float prevRotation;
 
-    public PipeBombEntity(EntityType<? extends ThrowableItemEntity> entityType, Level worldIn)
+    public ThrowablePipeBombEntity(EntityType<? extends ThrowableItemEntity> entityType, Level worldIn)
     {
         super(entityType, worldIn);
     }
 
-    public PipeBombEntity(EntityType<? extends ThrowableItemEntity> entityType, Level world, LivingEntity entity)
+    public ThrowablePipeBombEntity(EntityType<? extends ThrowableItemEntity> entityType, Level world, LivingEntity entity)
     {
         super(entityType, world, entity);
         this.setShouldBounce(true);
         this.setGravityVelocity(0.05F);
-        this.setItem(new ItemStack(ItemRegistry.PIPE_BOMB.get()));
+        this.setItem(new ItemStack(ItemInit.PIPE_BOMB.get()));
         this.setMaxLife(20 * 3);
     }
 
-    public PipeBombEntity(Level world, LivingEntity entity, int timeLeft)
+    public ThrowablePipeBombEntity(Level world, LivingEntity entity, int timeLeft)
     {
         super(ModEntities.THROWABLE_GRENADE.get(), world, entity);
         this.setShouldBounce(true);
         this.setGravityVelocity(0.05F);
-        this.setItem(new ItemStack(ItemRegistry.PIPE_BOMB.get()));
+        this.setItem(new ItemStack(ItemInit.PIPE_BOMB.get()));
         this.setMaxLife(timeLeft);
     }
 
