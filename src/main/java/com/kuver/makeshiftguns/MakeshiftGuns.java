@@ -3,6 +3,8 @@ package com.kuver.makeshiftguns;
 import com.kuver.makeshiftguns.client.render.gun.model.ARPrototypeModel;
 import com.kuver.makeshiftguns.init.ItemInit;
 import com.mrcrayfish.guns.client.render.gun.ModelOverrides;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -15,8 +17,20 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class MakeshiftGuns {
     public static final String MOD_ID = "makeshiftguns";
 
-    public MakeshiftGuns()
-    {
+    public static final CreativeModeTab GROUP = new CreativeModeTab(MOD_ID) {
+        @Override
+        public ItemStack makeIcon() {
+
+            //Gets the gun item, unneeded if you're not gonna use a gun.
+            ItemStack stack = new ItemStack(ItemInit.AR_PROTOTYPE.get());
+            //Makes sure that the icon gun has full ammo so the durability bar doesn't show up.
+            stack.getOrCreateTag().putInt("AmmoCount", ItemInit.AR_PROTOTYPE.get().getGun().getGeneral().getMaxAmmo());
+            //Returns the loaded gun icon.
+            return stack;
+        }
+    };
+
+    public MakeshiftGuns() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::setup);
 
@@ -25,7 +39,7 @@ public class MakeshiftGuns {
         //Registers all the Deferred Registers from our init classes.
         ItemInit.ITEMS.register(bus);
 
-        bus.addListener(this::OnClientSetup);
+        bus.addListener(this::onClientSetup);
     }
 
     //Common setup event
@@ -34,7 +48,7 @@ public class MakeshiftGuns {
         System.out.println("Hello from Makeshift Guns preinit!");
     }
 
-    private void OnClientSetup(final FMLClientSetupEvent event) {
+    private void onClientSetup(final FMLClientSetupEvent event) {
 
         ModelOverrides.register(ItemInit.AR_PROTOTYPE.get(), new ARPrototypeModel());
     }

@@ -13,8 +13,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = MakeshiftGuns.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public enum SpecialModels {
-    AR_PROTOTYPE_MAIN("arprototype_main"),
-    AR_PROTOTYPE_HANDLE("arprototype_handle");
+    AR_PROTOTYPE_MAIN("ar_prototype_main"),
+    AR_PROTOTYPE_HANDLE("ar_prototype_handle");
 
     private final ResourceLocation modelLocation;
     private final boolean specialModel;
@@ -22,7 +22,7 @@ public enum SpecialModels {
     private BakedModel cachedModel;
 
     SpecialModels(String modelName) {
-        this(new ResourceLocation(MakeshiftGuns.MOD_ID, "special/" + modelName), true);
+        this(new ResourceLocation(MakeshiftGuns.MOD_ID, "special/gun/" + modelName), true);
     }
 
     SpecialModels(ResourceLocation resourceLocation, boolean specialModel) {
