@@ -1,8 +1,11 @@
 package com.kuver.makeshiftguns;
 
 import com.kuver.makeshiftguns.client.render.gun.model.ARPrototypeModel;
+import com.kuver.makeshiftguns.entity.ThrowableSmokeGrenadeEntity;
+import com.kuver.makeshiftguns.init.EntityInit;
 import com.kuver.makeshiftguns.init.ItemInit;
 import com.mrcrayfish.guns.client.render.gun.ModelOverrides;
+import com.mrcrayfish.guns.common.ProjectileManager;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,7 +40,8 @@ public class MakeshiftGuns {
         MinecraftForge.EVENT_BUS.register(this);
 
         //Registers all the Deferred Registers from our init classes.
-        ItemInit.ITEMS.register(bus);
+        ItemInit.REGISTER.register(bus);
+        EntityInit.REGISTER.register(bus);
 
         bus.addListener(this::onClientSetup);
     }
@@ -46,6 +50,8 @@ public class MakeshiftGuns {
     private void setup(final FMLCommonSetupEvent event) {
 
         System.out.println("Hello from Makeshift Guns preinit!");
+
+        //ProjectileManager.getInstance().registerFactory(ItemInit.SMOKE_GRENADE.get(), ThrowableSmokeGrenadeEntity::new);
     }
 
     private void onClientSetup(final FMLClientSetupEvent event) {

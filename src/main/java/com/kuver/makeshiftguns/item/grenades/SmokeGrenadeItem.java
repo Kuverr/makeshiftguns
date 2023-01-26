@@ -1,6 +1,6 @@
 package com.kuver.makeshiftguns.item.grenades;
 
-import com.kuver.makeshiftguns.entity.ThrowablePipeBombEntity;
+import com.kuver.makeshiftguns.entity.ThrowableSmokeGrenadeEntity;
 import com.mrcrayfish.guns.init.ModSounds;
 import com.mrcrayfish.guns.item.AmmoItem;
 import net.minecraft.sounds.SoundSource;
@@ -14,10 +14,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-public class PipeBombItem extends AmmoItem {
+public class SmokeGrenadeItem extends AmmoItem{
     protected int maxCookTime;
 
-    public PipeBombItem(Item.Properties properties, int maxCookTime)
+    public SmokeGrenadeItem(Item.Properties properties, int maxCookTime)
     {
         super(properties);
         this.maxCookTime = maxCookTime;
@@ -60,7 +60,7 @@ public class PipeBombItem extends AmmoItem {
         {
             if(!(entityLiving instanceof Player) || !((Player) entityLiving).isCreative())
                 stack.shrink(1);
-            ThrowablePipeBombEntity grenade = this.create(worldIn, entityLiving, 0);
+            ThrowableSmokeGrenadeEntity grenade = this.create(worldIn, entityLiving, 0);
             grenade.onDeath();
             if(entityLiving instanceof Player)
             {
@@ -80,7 +80,7 @@ public class PipeBombItem extends AmmoItem {
             {
                 if(!(entityLiving instanceof Player) || !((Player) entityLiving).isCreative())
                     stack.shrink(1);
-                ThrowablePipeBombEntity grenade = this.create(worldIn, entityLiving, this.maxCookTime - duration);
+                ThrowableSmokeGrenadeEntity grenade = this.create(worldIn, entityLiving, this.maxCookTime - duration);
                 grenade.shootFromRotation(entityLiving, entityLiving.getXRot(), entityLiving.getYRot(), 0.0F, Math.min(1.0F, duration / 20F), 1.0F);
                 worldIn.addFreshEntity(grenade);
                 this.onThrown(worldIn, grenade);
@@ -92,9 +92,9 @@ public class PipeBombItem extends AmmoItem {
         }
     }
 
-    public ThrowablePipeBombEntity create(Level world, LivingEntity entity, int timeLeft)
+    public ThrowableSmokeGrenadeEntity create(Level world, LivingEntity entity, int timeLeft)
     {
-        return new ThrowablePipeBombEntity(world, entity, timeLeft);
+        return new ThrowableSmokeGrenadeEntity(world, entity, timeLeft);
     }
 
     public boolean canCook()
@@ -102,7 +102,7 @@ public class PipeBombItem extends AmmoItem {
         return true;
     }
 
-    protected void onThrown(Level world, ThrowablePipeBombEntity entity)
+    protected void onThrown(Level world, ThrowableSmokeGrenadeEntity entity)
     {
     }
 }

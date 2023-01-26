@@ -2,7 +2,8 @@ package com.kuver.makeshiftguns.init;
 
 import com.kuver.makeshiftguns.MakeshiftGuns;
 import com.kuver.makeshiftguns.item.grenades.PipeBombItem;
-import com.mrcrayfish.guns.GunMod;
+import com.kuver.makeshiftguns.item.grenades.SmokeGrenadeItem;
+import com.mrcrayfish.guns.item.GrenadeItem;
 import com.mrcrayfish.guns.item.GunItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -10,10 +11,19 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemInit {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MakeshiftGuns.MOD_ID);
+    public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, MakeshiftGuns.MOD_ID);
 
-    public static final RegistryObject<GunItem> TEST_GUN = ITEMS.register("testgun", () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
+    public static final RegistryObject<GunItem> TEST_GUN = REGISTER.register("testgun",
+            () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
 
-    public static final RegistryObject<GunItem> AR_PROTOTYPE = ITEMS.register("ar_prototype", () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
-    public static final RegistryObject<Item> PIPE_BOMB = ITEMS.register("pipe_bomb", () -> new PipeBombItem(new Item.Properties().tab(MakeshiftGuns.GROUP), 25 * 4));
+    public static final RegistryObject<GunItem> MAKESHIFT_RIFLE = REGISTER.register("makeshift_rifle",
+            () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
+
+    public static final RegistryObject<GunItem> AR_PROTOTYPE = REGISTER.register("ar_prototype",
+            () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
+    public static final RegistryObject<Item> PIPE_BOMB = REGISTER.register("pipe_bomb",
+            () -> new PipeBombItem(new Item.Properties().tab(MakeshiftGuns.GROUP), 25 * 4));
+
+    public static final RegistryObject<Item> SMOKE_GRENADE = REGISTER.register("smoke_grenade",
+            () -> new SmokeGrenadeItem(new Item.Properties().tab(MakeshiftGuns.GROUP), 25 * 4));
 }

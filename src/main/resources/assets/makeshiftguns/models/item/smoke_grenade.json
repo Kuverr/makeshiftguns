@@ -1,0 +1,75 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "makeshiftguns:items/smokenade",
+		"particle": "makeshiftguns:items/smokenade"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [9, 3, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 3], "texture": "#0"},
+				"east": {"uv": [2, 0, 4, 3], "texture": "#0"},
+				"south": {"uv": [0, 3, 2, 6], "texture": "#0"},
+				"west": {"uv": [2, 3, 4, 6], "texture": "#0"},
+				"up": {"uv": [6, 2, 4, 0], "texture": "#0"},
+				"down": {"uv": [6, 2, 4, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.4, 3, 7.4],
+			"to": [8.6, 3.8, 8.6],
+			"faces": {
+				"north": {"uv": [6, 2, 7.25, 2.75], "texture": "#0"},
+				"east": {"uv": [3, 6, 4.25, 6.75], "texture": "#0"},
+				"south": {"uv": [6, 3, 7.25, 3.75], "texture": "#0"},
+				"west": {"uv": [6, 4, 7.25, 4.75], "texture": "#0"},
+				"up": {"uv": [5.25, 5.25, 4, 4], "texture": "#0"},
+				"down": {"uv": [1.25, 6, 0, 7.25], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.6, 1.5, 9.2],
+			"to": [8.4, 3, 9.4],
+			"faces": {
+				"north": {"uv": [6, 0, 6.75, 1.5], "texture": "#0"},
+				"east": {"uv": [7, 0, 7.25, 1.5], "texture": "#0"},
+				"south": {"uv": [2, 6, 2.75, 7.5], "texture": "#0"},
+				"west": {"uv": [3, 7, 3.25, 8.5], "texture": "#0"},
+				"up": {"uv": [0.75, 8.25, 0, 8], "texture": "#0"},
+				"down": {"uv": [8.75, 0, 8, 0.25], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.6, 3.22942, 8.36366],
+			"to": [8.4, 3.42942, 9.49466],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 3.32942, 8.92916]},
+			"faces": {
+				"north": {"uv": [4, 7, 4.75, 7.25], "texture": "#0"},
+				"east": {"uv": [7, 5, 8.25, 5.25], "texture": "#0"},
+				"south": {"uv": [7, 6, 7.75, 6.25], "texture": "#0"},
+				"west": {"uv": [6, 7, 7.25, 7.25], "texture": "#0"},
+				"up": {"uv": [5.75, 7.25, 5, 6], "texture": "#0"},
+				"down": {"uv": [6.75, 5, 6, 6.25], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6, 0]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 14.25, 0],
+			"scale": [2, 2, 2]
+		},
+		"ground": {
+			"translation": [0, 4.75, 0]
+		},
+		"gui": {
+			"rotation": [0, 47, 25],
+			"translation": [-5.25, 16.75, 0],
+			"scale": [3, 3, 3]
+		}
+	}
+}
