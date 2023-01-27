@@ -99,7 +99,7 @@ public class SmokeGrenadeItem extends AmmoItem{
 
     public boolean canCook()
     {
-        return true;
+        return false;
     }
 
     protected void onThrown(Level world, ThrowableSmokeGrenadeEntity entity)

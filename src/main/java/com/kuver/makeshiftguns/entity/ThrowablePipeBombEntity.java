@@ -4,17 +4,12 @@ import com.mrcrayfish.guns.Config;
 import com.mrcrayfish.guns.entity.GrenadeEntity;
 import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
 import com.mrcrayfish.guns.init.ModEntities;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import com.kuver.makeshiftguns.init.ItemInit;
-import net.minecraft.world.level.block.Blocks;
-
-import java.util.UUID;
 
 public class ThrowablePipeBombEntity extends ThrowableGrenadeEntity {
     public float rotation;
@@ -57,9 +52,5 @@ public class ThrowablePipeBombEntity extends ThrowableGrenadeEntity {
 
     public void onDeath() {
         GrenadeEntity.createExplosion(this, Config.COMMON.grenades.explosionRadius.get().floatValue(), true);
-        //chat message for testing
-//        TextComponent msg = new TextComponent("test message");
-//        UUID testuuid = Minecraft.getInstance().player.getUUID();
-//        Minecraft.getInstance().player.sendMessage(msg,testuuid);
     }
 }
