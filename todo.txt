@@ -1,7 +1,3 @@
-- more ammo types (dragon's breath, incendiary, fmj, hollow point(?), etc.)
-- weapon with interchangable ammo types
-- weapon attachments
-- more weapons
-- ballistic vests negating/decreasing bullet damage
-- add sounds for individual weapons
-- ghillie suit
+- weapons with better models and animations
+- crafting materials
+- some other stuff idk for now
