@@ -4,12 +4,15 @@ import com.kuver.makeshiftguns.init.EntityInit;
 import com.kuver.makeshiftguns.init.ItemInit;
 import com.kuver.makeshiftguns.init.ParticleInit;
 import com.mrcrayfish.guns.entity.ThrowableItemEntity;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+
 public class ThrowableSmokeGrenadeEntity extends ThrowableItemEntity {
     public float rotation;
     public float prevRotation;
@@ -41,19 +44,35 @@ public class ThrowableSmokeGrenadeEntity extends ThrowableItemEntity {
                 this.level.addParticle(ParticleTypes.SMOKE, true, this.getX(), this.getY() + 0.25, this.getZ(), 0, 0, 0);
             }
         }
-        if (speed < 0.1 && !this.exploded) {
-            if (this.level.isClientSide) {
-                for (int i = 0; i < 32; i++) {
-                    this.level.addAlwaysVisibleParticle(
-                            ParticleInit.SMOKE_GRENADE_PARTICLES.get(), true,
-                            this.getX() + ((Math.random() * (3 - 0.1)) + 0.1),
-                            this.getY() + 2 + (Math.random() * 1 - 0.75),
-                            this.getZ() + ((Math.random() * (3 - 0.1)) + 0.1),
-                            0  + (Math.random() * 0.5 - 0.25),
-                            0,
-                            0  + (Math.random() * 0.5 - 0.25)
-                    );
-                }
+
+        Block blockBelow = (this.level.getBlockState(BlockPos.of((long) (this.getBlockY() - 0.2))).getBlock());
+//        System.out.println(blockBelow);
+//        System.out.println(speed);
+        double particleCount = 256;
+        if (speed < 0.06 && !this.exploded && blockBelow != net.minecraft.world.level.block.Blocks.AIR) {
+            for (int i = 0; i < particleCount; i++) {
+//                this.level.addAlwaysVisibleParticle(
+//                        , true,
+//                        this.getX(),
+//                        this.getY(),
+//                        this.getZ(),
+//                        0 + (Math.random() * .4),
+//                        0 + (Math.random() * .3),
+//                        0 + (Math.random() * .4)
+//                );
+                double range = .25;
+                double t = ((i - (particleCount/2)) * Math.PI) / (particleCount/2);
+                double x = Math.sin(t) * range;
+                double z = Math.cos(t) * range;
+                this.level.addAlwaysVisibleParticle(
+                        ParticleInit.SMOKE_GRENADE_PARTICLES.get(), true,
+                        this.getX(),
+                        this.getY(),
+                        this.getZ(),
+                        0 + x - (Math.random() * .4 - .2),
+                        0 + (Math.random() * .3),
+                        0 + z - (Math.random() * .4 - .2)
+                );
             }
             this.level.playSound(null, this.getX(), this.getY(), this.getZ(),
                     SoundEvents.LAVA_EXTINGUISH,

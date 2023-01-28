@@ -183,6 +183,9 @@ dependencies {
     runtimeOnly fg.deobf('curse.maven:jade-324717:4082408')
     runtimeOnly fg.deobf('curse.maven:jei-238222:4352925')
     runtimeOnly fg.deobf('curse.maven:dummy-225738:3820503')
+    runtimeOnly fg.deobf('curse.maven:oculus-581495:4354939')
+    runtimeOnly fg.deobf('curse.maven:rubidium-574856:4024781')
+    runtimeOnly fg.deobf('curse.maven:rubidium-extras-558905:3936081')
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

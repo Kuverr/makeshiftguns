@@ -94,7 +94,7 @@ public class SmokeGrenadeItem extends AmmoItem{
 
     public ThrowableSmokeGrenadeEntity create(Level world, LivingEntity entity, int timeLeft)
     {
-        return new ThrowableSmokeGrenadeEntity(world, entity, timeLeft);
+        return new ThrowableSmokeGrenadeEntity(world, entity, 160);
     }
 
     public boolean canCook()
@@ -102,7 +102,7 @@ public class SmokeGrenadeItem extends AmmoItem{
         return false;
     }
 
-    protected void onThrown(Level world, ThrowableSmokeGrenadeEntity entity)
-    {
+    protected void onThrown(Level world, ThrowableSmokeGrenadeEntity entity) {
+        world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.ITEM_GRENADE_PIN.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
     }
 }

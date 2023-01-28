@@ -12,6 +12,8 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemInit {
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, MakeshiftGuns.MOD_ID);
 
+    public static final RegistryObject<Item> DUCT_TAPE = REGISTER.register("duct_tape",
+            () -> new Item(new Item.Properties().stacksTo(16).tab(MakeshiftGuns.GROUP)));
     public static final RegistryObject<GunItem> TEST_GUN = REGISTER.register("testgun",
             () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
 
@@ -24,5 +26,5 @@ public class ItemInit {
             () -> new PipeBombItem(new Item.Properties().tab(MakeshiftGuns.GROUP), 72000));
 
     public static final RegistryObject<Item> SMOKE_GRENADE = REGISTER.register("smoke_grenade",
-            () -> new SmokeGrenadeItem(new Item.Properties().tab(MakeshiftGuns.GROUP), 25 * 4));
+            () -> new SmokeGrenadeItem(new Item.Properties().tab(MakeshiftGuns.GROUP), 72000));
 }

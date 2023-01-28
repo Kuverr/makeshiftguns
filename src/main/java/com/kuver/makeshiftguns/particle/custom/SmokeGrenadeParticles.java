@@ -9,7 +9,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class SmokeGrenadeParticles extends TextureSheetParticle {
 
-    public float size = (float) (Math.random() * 2 + 3);
+    public float size = (float) (Math.random() * 1 + 1);
 
     protected SmokeGrenadeParticles(ClientLevel level,
                                     double pX, double pY, double pZ,
