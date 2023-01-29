@@ -1,0 +1,39 @@
+{
+  "display": {
+    "flash": {
+      "yOffset": 3.3,
+      "zOffset": 2.64
+    }
+  },
+  "general": {
+    "alwaysSpread": true,
+    "gripType": "cgm:one_handed",
+    "maxAmmo": 9,
+    "rate": 3,
+    "recoilAdsReduction": 0.5,
+    "recoilAngle": 2.0,
+    "reloadAmount": 1,
+    "spread": 0.5
+  },
+  "modules": {
+    "zoom": {
+      "fovModifier": 0.7,
+      "yOffset": 4.5,
+      "zOffset": -1.0
+    }
+  },
+  "projectile": {
+    "damage": 9.0,
+    "item": "cgm:basic_bullet",
+    "life": 25,
+    "size": 0.2,
+    "speed": 10.0
+  },
+  "sounds": {
+    "cock": "cgm:item.pistol.cock",
+    "enchantedFire": "cgm:item.pistol.enchanted_fire",
+    "fire": "cgm:item.pistol.fire",
+    "reload": "cgm:item.pistol.reload",
+    "silencedFire": "cgm:item.pistol.silenced_fire"
+  }
+}

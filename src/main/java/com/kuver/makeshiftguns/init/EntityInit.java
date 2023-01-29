@@ -1,6 +1,7 @@
 package com.kuver.makeshiftguns.init;
 
 import com.kuver.makeshiftguns.MakeshiftGuns;
+import com.kuver.makeshiftguns.entity.ThrowableMolotovEntity;
 import com.kuver.makeshiftguns.entity.ThrowableSmokeGrenadeEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -15,7 +16,7 @@ import java.util.function.BiFunction;
 public class EntityInit {
     public static final DeferredRegister<EntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.ENTITIES, MakeshiftGuns.MOD_ID);
     public static final RegistryObject<EntityType<ThrowableSmokeGrenadeEntity>> THROWABLE_SMOKE_GRENADE = registerBasic("throwable_smoke_grenade", ThrowableSmokeGrenadeEntity::new);
-
+    public static final RegistryObject<EntityType<ThrowableMolotovEntity>> THROWABLE_MOLOTOV = registerBasic("throwable_custom_grenade", ThrowableMolotovEntity::new);
     private static <T extends Entity> RegistryObject<EntityType<T>> registerBasic(String id, BiFunction<EntityType<T>, Level, T> function) {
 
         return REGISTER.register(id, () -> EntityType.Builder.of(function::apply, MobCategory.MISC)

@@ -1,7 +1,9 @@
 package com.kuver.makeshiftguns;
 
 import com.kuver.makeshiftguns.client.render.gun.model.ARPrototypeModel;
-import com.kuver.makeshiftguns.entity.client.ThrowableSmokeGrenadeRenderer;
+import com.kuver.makeshiftguns.client.render.gun.model.MarksmanPistolModel;
+import com.kuver.makeshiftguns.entity.client.MolotovRenderer;
+import com.kuver.makeshiftguns.entity.client.SmokeGrenadeRenderer;
 import com.kuver.makeshiftguns.init.EntityInit;
 import com.kuver.makeshiftguns.init.ItemInit;
 import com.kuver.makeshiftguns.init.ParticleInit;
@@ -57,8 +59,10 @@ public class MakeshiftGuns {
     private void onClientSetup(final FMLClientSetupEvent event) {
 
         ModelOverrides.register(ItemInit.AR_PROTOTYPE.get(), new ARPrototypeModel());
+        ModelOverrides.register(ItemInit.MARKSMAN_PISTOL.get(), new MarksmanPistolModel());
 
-        EntityRenderers.register(EntityInit.THROWABLE_SMOKE_GRENADE.get(), ThrowableSmokeGrenadeRenderer::new);
+        EntityRenderers.register(EntityInit.THROWABLE_SMOKE_GRENADE.get(), SmokeGrenadeRenderer::new);
+        EntityRenderers.register(EntityInit.THROWABLE_MOLOTOV.get(), MolotovRenderer::new);
 
     }
 }

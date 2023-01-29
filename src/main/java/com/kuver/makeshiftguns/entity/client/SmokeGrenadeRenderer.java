@@ -13,8 +13,8 @@ import net.minecraft.resources.ResourceLocation;
 
 import javax.annotation.Nullable;
 
-public class ThrowableSmokeGrenadeRenderer extends EntityRenderer<ThrowableSmokeGrenadeEntity> {
-    public ThrowableSmokeGrenadeRenderer(EntityRendererProvider.Context context) {
+public class SmokeGrenadeRenderer extends EntityRenderer<ThrowableSmokeGrenadeEntity> {
+    public SmokeGrenadeRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
 
@@ -37,14 +37,6 @@ public class ThrowableSmokeGrenadeRenderer extends EntityRenderer<ThrowableSmoke
         poseStack.translate(0, 0.15, 0);
         poseStack.mulPose(Vector3f.XP.rotationDegrees(-rotation));
         poseStack.translate(0, -0.15, 0);
-
-//        if (entity instanceof ThrowableStunGrenadeEntity) {
-//            poseStack.translate(0, entity.getDimensions(Pose.STANDING).height / 2, 0);
-//            poseStack.mulPose(Vector3f.ZP.rotationDegrees(-90F));
-//            poseStack.translate(0, -entity.getDimensions(Pose.STANDING).height / 2, 0);
-//        }
-
-        /* */
         poseStack.translate(0.0, 0.5, 0.0);
 
         Minecraft.getInstance().getItemRenderer().renderStatic(entity.getItem(), ItemTransforms.TransformType.NONE, light, OverlayTexture.NO_OVERLAY, poseStack, renderTypeBuffer, 0);

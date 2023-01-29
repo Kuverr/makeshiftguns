@@ -33,12 +33,18 @@ public class SmokeGrenadeParticles extends TextureSheetParticle {
     @Override
     public void tick() {
         super.tick();
-//        fadeOut();
+        fadeOut();
     }
 
-//    private void fadeOut() {
-//        this.alpha = (-(1F / this.lifetime) * this.age + 1F);
-//    }
+    private void fadeOut() {
+
+        //change this to be smoother
+        if (this.age >= (this.lifetime - 50)) {
+            float fadeage = (this.age - 550);
+            float fadelifetime = (this.lifetime - 550);
+            this.alpha = (-(1/fadelifetime) * fadeage + 1F);
+        }
+    }
 
     @Override
     public ParticleRenderType getRenderType() {

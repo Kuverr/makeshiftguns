@@ -4,7 +4,6 @@ import com.kuver.makeshiftguns.init.EntityInit;
 import com.kuver.makeshiftguns.init.ItemInit;
 import com.kuver.makeshiftguns.init.ParticleInit;
 import com.mrcrayfish.guns.entity.ThrowableItemEntity;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
@@ -44,24 +43,13 @@ public class ThrowableSmokeGrenadeEntity extends ThrowableItemEntity {
                 this.level.addParticle(ParticleTypes.SMOKE, true, this.getX(), this.getY() + 0.25, this.getZ(), 0, 0, 0);
             }
         }
-
-        Block blockBelow = (this.level.getBlockState(BlockPos.of((long) (this.getBlockY() - 0.2))).getBlock());
-//        System.out.println(blockBelow);
-//        System.out.println(speed);
+        Block blockBelow = this.getBlockStateOn().getBlock();
         double particleCount = 256;
         if (speed < 0.06 && !this.exploded && blockBelow != net.minecraft.world.level.block.Blocks.AIR) {
+            System.out.println(blockBelow);
             for (int i = 0; i < particleCount; i++) {
-//                this.level.addAlwaysVisibleParticle(
-//                        , true,
-//                        this.getX(),
-//                        this.getY(),
-//                        this.getZ(),
-//                        0 + (Math.random() * .4),
-//                        0 + (Math.random() * .3),
-//                        0 + (Math.random() * .4)
-//                );
                 double range = .25;
-                double t = ((i - (particleCount/2)) * Math.PI) / (particleCount/2);
+                double t = ((i - (particleCount / 2)) * Math.PI) / (particleCount / 2);
                 double x = Math.sin(t) * range;
                 double z = Math.cos(t) * range;
                 this.level.addAlwaysVisibleParticle(

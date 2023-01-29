@@ -13,6 +13,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = MakeshiftGuns.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public enum SpecialModels {
+
+    MARKSMAN_PISTOL_MAIN("marksman_pistol_main"),
+    MARKSMAN_PISTOL_BOLT("marksman_pistol_bolt"),
     AR_PROTOTYPE_MAIN("ar_prototype_main"),
     AR_PROTOTYPE_HANDLE("ar_prototype_handle");
 
