@@ -1,14 +1,20 @@
 package com.kuver.makeshiftguns;
 
+import com.kuver.makeshiftguns.client.handler.GunRenderingHandler;
 import com.kuver.makeshiftguns.client.render.gun.model.ARPrototypeModel;
 import com.kuver.makeshiftguns.client.render.gun.model.MarksmanPistolModel;
+import com.kuver.makeshiftguns.client.render.gun.model.ObrezThingModel;
+import com.kuver.makeshiftguns.client.render.pose.HandgunPose;
+import com.kuver.makeshiftguns.client.render.pose.TestBoltPose;
 import com.kuver.makeshiftguns.entity.client.MolotovRenderer;
 import com.kuver.makeshiftguns.entity.client.SmokeGrenadeRenderer;
 import com.kuver.makeshiftguns.init.EntityInit;
 import com.kuver.makeshiftguns.init.ItemInit;
 import com.kuver.makeshiftguns.init.ParticleInit;
 import com.mrcrayfish.guns.client.render.gun.ModelOverrides;
+import com.mrcrayfish.guns.common.GripType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,9 +34,9 @@ public class MakeshiftGuns {
         public ItemStack makeIcon() {
 
             //Gets the gun item, unneeded if you're not gonna use a gun.
-            ItemStack stack = new ItemStack(ItemInit.AR_PROTOTYPE.get());
-            //Makes sure that the icon gun has full ammo so the durability bar doesn't show up.
-            stack.getOrCreateTag().putInt("AmmoCount", ItemInit.AR_PROTOTYPE.get().getGun().getGeneral().getMaxAmmo());
+            ItemStack stack = new ItemStack(ItemInit.PIPE_BOMB.get());
+//            //Makes sure that the icon gun has full ammo so the durability bar doesn't show up.
+//            stack.getOrCreateTag().putInt("AmmoCount", ItemInit.AR_PROTOTYPE.get().getGun().getGeneral().getMaxAmmo());
             //Returns the loaded gun icon.
             return stack;
         }
@@ -54,15 +60,20 @@ public class MakeshiftGuns {
     private void setup(final FMLCommonSetupEvent event) {
 
         System.out.println("Hello from Makeshift Guns preinit!");
+
+        GripType.registerType(new GripType(new ResourceLocation("makeshiftguns", "handgun"), new HandgunPose()));
+        GripType.registerType(new GripType(new ResourceLocation("makeshiftguns", "testbolt"), new TestBoltPose()));
     }
 
     private void onClientSetup(final FMLClientSetupEvent event) {
 
         ModelOverrides.register(ItemInit.AR_PROTOTYPE.get(), new ARPrototypeModel());
         ModelOverrides.register(ItemInit.MARKSMAN_PISTOL.get(), new MarksmanPistolModel());
+        ModelOverrides.register(ItemInit.OBREZ_THING.get(), new ObrezThingModel());
 
         EntityRenderers.register(EntityInit.THROWABLE_SMOKE_GRENADE.get(), SmokeGrenadeRenderer::new);
         EntityRenderers.register(EntityInit.THROWABLE_MOLOTOV.get(), MolotovRenderer::new);
 
+        MinecraftForge.EVENT_BUS.register(GunRenderingHandler.get());
     }
 }

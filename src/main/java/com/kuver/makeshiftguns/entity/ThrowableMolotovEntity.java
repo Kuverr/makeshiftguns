@@ -43,7 +43,7 @@ public class ThrowableMolotovEntity extends ThrowableItemEntity {
             }
         }
 
-        BlockPos blockBelow = new BlockPos(this.getX(), this.getY() - 0.1, this.getZ());
+        BlockPos blockBelow = new BlockPos(this.getX(), this.getY() - 0.2, this.getZ());
         if (this.level.getBlockState(blockBelow).getBlock() != Blocks.AIR) {
             this.level.addParticle(
                     ParticleTypes.FLAME, true,

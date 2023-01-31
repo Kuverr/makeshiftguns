@@ -1,13 +1,13 @@
 {
   "display": {
     "flash": {
-      "yOffset": 3.3,
-      "zOffset": 2.64
+      "yOffset": 2.5,
+      "zOffset": 0.0
     }
   },
   "general": {
     "alwaysSpread": true,
-    "gripType": "cgm:one_handed",
+    "gripType": "makeshiftguns:handgun",
     "maxAmmo": 9,
     "rate": 3,
     "recoilAdsReduction": 0.5,
@@ -17,14 +17,14 @@
   },
   "modules": {
     "zoom": {
-      "fovModifier": 0.7,
-      "yOffset": 4.5,
+      "fovModifier": 1,
+      "yOffset": 3.2,
       "zOffset": -1.0
     }
   },
   "projectile": {
     "damage": 9.0,
-    "item": "cgm:basic_bullet",
+    "item": "makeshiftguns:test_bullet",
     "life": 25,
     "size": 0.2,
     "speed": 10.0

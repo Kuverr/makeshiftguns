@@ -1,4 +1,7 @@
 - add more weapons with animations
-- improve modelsand textures
-- add more grenades (molotov, stun, gas etc)
+- improve models and textures
 - add advanced crafting materials (duct tape with durability, metal components, etc)
+- change projectiles to be actual projectiles instead of ammoItems
+- add homing rocket launcher getting position where player is looking and sending a rocket to that position
+- separate from cgm and make it a standalone mod
+- figure out how to move the player arms with bolt action rifles to look smoother
