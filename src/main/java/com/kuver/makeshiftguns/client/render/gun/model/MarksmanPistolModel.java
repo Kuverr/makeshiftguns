@@ -4,20 +4,15 @@ import com.kuver.makeshiftguns.client.SpecialModels;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mrcrayfish.guns.client.render.gun.IOverrideModel;
 import com.mrcrayfish.guns.client.util.RenderUtil;
-import com.mrcrayfish.guns.common.Gun;
-import com.mrcrayfish.guns.item.GunItem;
-import com.mrcrayfish.guns.util.GunEnchantmentHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.item.ItemStack;
 
 public class MarksmanPistolModel implements IOverrideModel {
-    @SuppressWarnings("resource")
     @Override
     public void render(
             float partialTicks,
@@ -66,6 +61,7 @@ public class MarksmanPistolModel implements IOverrideModel {
 
         }
     }
+
     private double ease(double x) {
         return 1 - Math.pow(1 - (2 * x), 4);
     }

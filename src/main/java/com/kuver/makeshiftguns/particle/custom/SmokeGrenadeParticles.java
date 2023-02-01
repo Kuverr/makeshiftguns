@@ -5,6 +5,7 @@ import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
 public class SmokeGrenadeParticles extends TextureSheetParticle {
@@ -47,7 +48,7 @@ public class SmokeGrenadeParticles extends TextureSheetParticle {
     }
 
     @Override
-    public ParticleRenderType getRenderType() {
+    public @NotNull ParticleRenderType getRenderType() {
         return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
     }
 
@@ -61,7 +62,7 @@ public class SmokeGrenadeParticles extends TextureSheetParticle {
             this.sprites = spriteSet;
         }
 
-        public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
+        public Particle createParticle(@NotNull SimpleParticleType particleType, @NotNull ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
             SmokeGrenadeParticles smokeParticle = new SmokeGrenadeParticles(level, x, y, z, this.sprites, dx, dy, dz);
             smokeParticle.pickSprite(this.sprites);
             smokeParticle.setColor(

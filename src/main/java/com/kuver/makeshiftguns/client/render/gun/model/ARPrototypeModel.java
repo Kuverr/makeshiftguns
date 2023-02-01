@@ -12,7 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import com.kuver.makeshiftguns.client.SpecialModels;
 
 public class ARPrototypeModel implements IOverrideModel {
-    @SuppressWarnings("resource")
     @Override
     public void render(
             float partialTicks,

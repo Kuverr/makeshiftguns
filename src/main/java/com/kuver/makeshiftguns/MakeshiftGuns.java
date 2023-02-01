@@ -3,9 +3,7 @@ package com.kuver.makeshiftguns;
 import com.kuver.makeshiftguns.client.handler.GunRenderingHandler;
 import com.kuver.makeshiftguns.client.render.gun.model.ARPrototypeModel;
 import com.kuver.makeshiftguns.client.render.gun.model.MarksmanPistolModel;
-import com.kuver.makeshiftguns.client.render.gun.model.ObrezThingModel;
 import com.kuver.makeshiftguns.client.render.pose.HandgunPose;
-import com.kuver.makeshiftguns.client.render.pose.TestBoltPose;
 import com.kuver.makeshiftguns.entity.client.MolotovRenderer;
 import com.kuver.makeshiftguns.entity.client.SmokeGrenadeRenderer;
 import com.kuver.makeshiftguns.init.EntityInit;
@@ -23,6 +21,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("makeshiftguns")
@@ -31,14 +30,8 @@ public class MakeshiftGuns {
 
     public static final CreativeModeTab GROUP = new CreativeModeTab(MOD_ID) {
         @Override
-        public ItemStack makeIcon() {
-
-            //Gets the gun item, unneeded if you're not gonna use a gun.
-            ItemStack stack = new ItemStack(ItemInit.PIPE_BOMB.get());
-//            //Makes sure that the icon gun has full ammo so the durability bar doesn't show up.
-//            stack.getOrCreateTag().putInt("AmmoCount", ItemInit.AR_PROTOTYPE.get().getGun().getGeneral().getMaxAmmo());
-            //Returns the loaded gun icon.
-            return stack;
+        public @NotNull ItemStack makeIcon() {
+            return new ItemStack(ItemInit.PIPE_BOMB.get());
         }
     };
 
@@ -62,14 +55,12 @@ public class MakeshiftGuns {
         System.out.println("Hello from Makeshift Guns preinit!");
 
         GripType.registerType(new GripType(new ResourceLocation("makeshiftguns", "handgun"), new HandgunPose()));
-        GripType.registerType(new GripType(new ResourceLocation("makeshiftguns", "testbolt"), new TestBoltPose()));
     }
 
     private void onClientSetup(final FMLClientSetupEvent event) {
 
         ModelOverrides.register(ItemInit.AR_PROTOTYPE.get(), new ARPrototypeModel());
         ModelOverrides.register(ItemInit.MARKSMAN_PISTOL.get(), new MarksmanPistolModel());
-        ModelOverrides.register(ItemInit.OBREZ_THING.get(), new ObrezThingModel());
 
         EntityRenderers.register(EntityInit.THROWABLE_SMOKE_GRENADE.get(), SmokeGrenadeRenderer::new);
         EntityRenderers.register(EntityInit.THROWABLE_MOLOTOV.get(), MolotovRenderer::new);

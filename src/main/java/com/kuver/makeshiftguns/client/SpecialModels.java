@@ -16,8 +16,6 @@ public enum SpecialModels {
 
     MARKSMAN_PISTOL_MAIN("marksman_pistol_main"),
     MARKSMAN_PISTOL_BOLT("marksman_pistol_bolt"),
-    OBREZ_THING_MAIN("obrez_thing_main"),
-    OBREZ_THING_BOLT("obrez_thing_bolt"),
     AR_PROTOTYPE_MAIN("ar_prototype_main"),
     AR_PROTOTYPE_HANDLE("ar_prototype_handle");
 

@@ -5,7 +5,7 @@ import com.kuver.makeshiftguns.item.grenades.MolotovItem;
 import com.kuver.makeshiftguns.item.grenades.PipeBombItem;
 import com.kuver.makeshiftguns.item.grenades.SmokeGrenadeItem;
 import com.mrcrayfish.guns.item.AmmoItem;
-import com.mrcrayfish.guns.item.GunItem;
+import com.kuver.makeshiftguns.item.GunItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,16 +20,10 @@ public class ItemInit {
     public static final RegistryObject<AmmoItem> TEST_BULLET = REGISTER.register("test_bullet",
             () -> new AmmoItem(new Item.Properties().stacksTo(64).tab(MakeshiftGuns.GROUP)));
 
-    public static final RegistryObject<GunItem> TEST_GUN = REGISTER.register("testgun",
-            () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
-
     public static final RegistryObject<GunItem> MAKESHIFT_RIFLE = REGISTER.register("makeshift_rifle",
             () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
 
     public static final RegistryObject<GunItem> AR_PROTOTYPE = REGISTER.register("ar_prototype",
-            () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
-
-    public static final RegistryObject<GunItem> OBREZ_THING = REGISTER.register("obrez_thing",
             () -> new GunItem(new Item.Properties().stacksTo(1).tab(MakeshiftGuns.GROUP)));
 
     public static final RegistryObject<GunItem> MARKSMAN_PISTOL = REGISTER.register("marksman_pistol",
