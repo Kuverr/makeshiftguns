@@ -26,17 +26,14 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class HandgunPose extends WeaponPose {
     public HandgunPose() {
     }
-
+    // todo fix this piece of crap pose
     protected AimPose getUpPose() {
         AimPose upPose = new AimPose();
-//        upPose.getIdle().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(60.0F, 0.0F, 10.0F))
-//                .setRightArm((new LimbPose()).setRotationAngleX(-120.0F).setRotationAngleY(-55.0F).setRotationPointX(-5.0F).setRotationPointY(3.0F).setRotationPointZ(0.0F))
-//                .setLeftArm((new LimbPose()).setRotationAngleX(-160.0F).setRotationAngleY(-20.0F).setRotationAngleZ(-30.0F).setRotationPointY(2.0F).setRotationPointZ(-1.0F));
-        upPose.getIdle().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(40.0F, 0.0F, 30.0F)).setItemTranslate(new Vector3f(-1.0F, 0.0F, 0.0F))
+        upPose.getIdle().setRenderYawOffset(0F).setItemRotation(new Vector3f(40.0F, 0.0F, 30.0F))
                 .setRightArm((new LimbPose()).setRotationAngleX(-140.0F).setRotationAngleY(-55.0F).setRotationPointX(-5.0F).setRotationPointY(3.0F).setRotationPointZ(0.0F))
                 .setLeftArm((new LimbPose()).setRotationAngleX(-170.0F).setRotationAngleY(-20.0F).setRotationAngleZ(-35.0F).setRotationPointY(1.0F).setRotationPointZ(0.0F));
 
-        upPose.getAiming().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(40.0F, 0.0F, 30.0F)).setItemTranslate(new Vector3f(-1.0F, 0.0F, 0.0F))
+        upPose.getAiming().setRenderYawOffset(0F).setItemRotation(new Vector3f(40.0F, 0.0F, 30.0F))
                 .setRightArm((new LimbPose()).setRotationAngleX(-140.0F).setRotationAngleY(-55.0F).setRotationPointX(-5.0F).setRotationPointY(3.0F).setRotationPointZ(0.0F))
                 .setLeftArm((new LimbPose()).setRotationAngleX(-170.0F).setRotationAngleY(-20.0F).setRotationAngleZ(-35.0F).setRotationPointY(1.0F).setRotationPointZ(0.0F));
         return upPose;
@@ -44,29 +41,23 @@ public class HandgunPose extends WeaponPose {
 
     protected AimPose getForwardPose() {
         AimPose forwardPose = new AimPose();
-//        forwardPose.getIdle().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(30.0F, -11.0F, 0.0F))
-//                .setRightArm((new LimbPose()).setRotationAngleX(-60.0F).setRotationAngleY(-55.0F).setRotationAngleZ(0.0F).setRotationPointX(-5.0F).setRotationPointY(2.0F).setRotationPointZ(1.0F))
-//                .setLeftArm((new LimbPose()).setRotationAngleX(-65.0F).setRotationAngleY(-10.0F).setRotationAngleZ(5.0F).setRotationPointY(2.0F).setRotationPointZ(-1.0F));
-        forwardPose.getIdle().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(5.0F, -21.0F, 0.0F))
-                .setRightArm((new LimbPose()).setRotationAngleX(-85.0F).setRotationAngleY(-65.0F).setRotationAngleZ(0.0F).setRotationPointX(-5.0F).setRotationPointY(2.0F))
-                .setLeftArm((new LimbPose()).setRotationAngleX(-90.0F).setRotationAngleY(-15.0F).setRotationAngleZ(0.0F).setRotationPointY(2.0F).setRotationPointZ(0.0F));
+        forwardPose.getIdle().setRenderYawOffset(0F).setItemRotation(new Vector3f(5.0F, -35.0F, 0.0F))
+                .setRightArm((new LimbPose()).setRotationAngleX(-85.0F).setRotationAngleY(-35.0F).setRotationAngleZ(0.0F).setRotationPointX(-5.0F).setRotationPointY(2.0F))
+                .setLeftArm((new LimbPose()).setRotationAngleX(-90.0F).setRotationAngleY(35.0F).setRotationAngleZ(0.0F).setRotationPointY(2.0F).setRotationPointZ(0.0F));
 
-        forwardPose.getAiming().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(5.0F, -21.0F, 0.0F))
-                .setRightArm((new LimbPose()).setRotationAngleX(-85.0F).setRotationAngleY(-65.0F).setRotationAngleZ(0.0F).setRotationPointX(-5.0F).setRotationPointY(2.0F))
-                .setLeftArm((new LimbPose()).setRotationAngleX(-90.0F).setRotationAngleY(-15.0F).setRotationAngleZ(0.0F).setRotationPointY(2.0F).setRotationPointZ(0.0F));
+        forwardPose.getAiming().setRenderYawOffset(0F).setItemRotation(new Vector3f(5.0F, -35.0F, 0.0F))
+                .setRightArm((new LimbPose()).setRotationAngleX(-85.0F).setRotationAngleY(-35.0F).setRotationAngleZ(0.0F).setRotationPointX(-5.0F).setRotationPointY(2.0F))
+                .setLeftArm((new LimbPose()).setRotationAngleX(-90.0F).setRotationAngleY(35.0F).setRotationAngleZ(0.0F).setRotationPointY(2.0F).setRotationPointZ(0.0F));
         return forwardPose;
     }
 
     protected AimPose getDownPose() {
         AimPose downPose = new AimPose();
-//        downPose.getIdle().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(-15.0F, -5.0F, 0.0F)).setItemTranslate(new Vector3f(0.0F, -0.5F, 0.5F))
-//                .setRightArm((new LimbPose()).setRotationAngleX(-30.0F).setRotationAngleY(-65.0F).setRotationAngleZ(0.0F).setRotationPointX(-5.0F).setRotationPointY(2.0F))
-//                .setLeftArm((new LimbPose()).setRotationAngleX(-5.0F).setRotationAngleY(-20.0F).setRotationAngleZ(20.0F).setRotationPointY(5.0F).setRotationPointZ(0.0F));
-        downPose.getIdle().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(-20.0F, -5.0F, -10.0F)).setItemTranslate(new Vector3f(0.0F, -0.5F, 1.0F))
+        downPose.getIdle().setRenderYawOffset(0F).setItemRotation(new Vector3f(-20.0F, -5.0F, -10.0F)).setItemTranslate(new Vector3f(0.0F, -0.5F, 1.0F))
                 .setRightArm((new LimbPose()).setRotationAngleX(-30.0F).setRotationAngleY(-65.0F).setRotationAngleZ(0.0F).setRotationPointX(-5.0F).setRotationPointY(1.0F))
                 .setLeftArm((new LimbPose()).setRotationAngleX(-10.0F).setRotationAngleY(-20.0F).setRotationAngleZ(30.0F).setRotationPointY(5.0F).setRotationPointZ(0.0F));
 
-        downPose.getAiming().setRenderYawOffset(45.0F).setItemRotation(new Vector3f(-20.0F, -5.0F, -10.0F)).setItemTranslate(new Vector3f(0.0F, -0.5F, 1.0F))
+        downPose.getAiming().setRenderYawOffset(0F).setItemRotation(new Vector3f(-20.0F, -5.0F, -10.0F)).setItemTranslate(new Vector3f(0.0F, -0.5F, 1.0F))
                 .setRightArm((new LimbPose()).setRotationAngleX(-30.0F).setRotationAngleY(-65.0F).setRotationAngleZ(0.0F).setRotationPointX(-5.0F).setRotationPointY(1.0F))
                 .setLeftArm((new LimbPose()).setRotationAngleX(-10.0F).setRotationAngleY(-20.0F).setRotationAngleZ(30.0F).setRotationPointY(5.0F).setRotationPointZ(0.0F));
         return downPose;
@@ -74,27 +65,9 @@ public class HandgunPose extends WeaponPose {
 
     @OnlyIn(Dist.CLIENT)
     public void applyPlayerModelRotation(Player player, ModelPart rightArm, ModelPart leftArm, ModelPart head, InteractionHand hand, float aimProgress) {
-        if ((Boolean) Config.CLIENT.display.oldAnimations.get()) {
-            Minecraft mc = Minecraft.getInstance();
-            boolean right = mc.options.mainHand == HumanoidArm.RIGHT ? hand == InteractionHand.MAIN_HAND : hand == InteractionHand.OFF_HAND;
-            ModelPart mainArm = right ? rightArm : leftArm;
-            ModelPart secondaryArm = right ? leftArm : rightArm;
-            mainArm.xRot = head.xRot;
-            mainArm.yRot = head.yRot;
-            mainArm.zRot = head.zRot;
-            secondaryArm.xRot = head.xRot;
-            secondaryArm.yRot = head.yRot;
-            secondaryArm.zRot = head.zRot;
-            mainArm.xRot = (float) Math.toRadians((double) (-55.0F + aimProgress * -30.0F));
-            mainArm.yRot = (float) Math.toRadians((double) ((-45.0F + aimProgress * -20.0F) * (right ? 1.0F : -1.0F)));
-            secondaryArm.xRot = (float) Math.toRadians((double) (-42.0F + aimProgress * -48.0F));
-            secondaryArm.yRot = (float) Math.toRadians((double) ((-15.0F + aimProgress * 5.0F) * (right ? 1.0F : -1.0F)));
-        } else {
-            super.applyPlayerModelRotation(player, rightArm, leftArm, head, hand, aimProgress);
-            float angle = this.getPlayerPitch(player);
-            head.xRot = (float) Math.toRadians((double) angle > 0.0 ? (double) (angle * 70.0F) : (double) (angle * 90.0F));
-        }
-
+        super.applyPlayerModelRotation(player, rightArm, leftArm, head, hand, aimProgress);
+        float angle = this.getPlayerPitch(player);
+        head.xRot = (float) Math.toRadians((double) angle > 0.0 ? (double) (angle * 70.0F) : (double) (angle * 90.0F));
     }
 
     @OnlyIn(Dist.CLIENT)

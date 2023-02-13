@@ -44,15 +44,17 @@ public class ThrowableMolotovEntity extends ThrowableItemEntity {
 
         BlockPos blockBelow = new BlockPos(this.getX(), this.getY() - 0.2, this.getZ());
         if (this.level.getBlockState(blockBelow).getBlock() != Blocks.AIR) {
-            this.level.addParticle(
-                    ParticleTypes.FLAME, true,
-                    this.getX(),
-                    this.getY(),
-                    this.getZ(),
-                    0 + (Math.random() * .5 - .25),
-                    0 + (Math.random() * .25),
-                    0 + (Math.random() * .5 - .25)
-            );
+            for (int i = 0; i < 5; i++) {
+                this.level.addParticle(
+                        ParticleTypes.FLAME, true,
+                        this.getX(),
+                        this.getY(),
+                        this.getZ(),
+                        0 + (Math.random() * .5 - .25),
+                        0 + (Math.random() * .25),
+                        0 + (Math.random() * .5 - .25)
+                );
+            }
         }
     }
 
@@ -68,18 +70,15 @@ public class ThrowableMolotovEntity extends ThrowableItemEntity {
                 1.0F,
                 1.0F);
 
-        for (int h = -1; h < 2; h++) {
-            float flameHeight = (float) (this.getY() + h);
-            for (int i = 0; i < 8; i++) {
-                float flameDistanceX = (float) (Math.random() * 5 - 2.5);
-                float flameDistanceY = (float) (Math.random() * 5 - 2.5);
-                BlockPos posBelow = new BlockPos(this.getX() + flameDistanceX, flameHeight - 1, this.getZ() + flameDistanceY);
-                BlockPos flamePos = new BlockPos(this.getX() + flameDistanceX, flameHeight, this.getZ() + flameDistanceY);
-                if (this.level.getBlockState(flamePos).getBlock() == Blocks.AIR &&
-                        this.level.getBlockState(posBelow).getBlock() != Blocks.AIR &&
-                        this.level.getBlockState(posBelow).getBlock() != Blocks.FIRE) {
-                    this.level.setBlock(flamePos, Blocks.FIRE.defaultBlockState(), 3);
-                }
+        for (int i = 0; i < 8; i++) {
+            float flameDistanceX = (float) (Math.random() * 5 - 2.5);
+            float flameDistanceY = (float) (Math.random() * 5 - 2.5);
+            BlockPos posBelow = new BlockPos(this.getX() + flameDistanceX, this.getY() - 1, this.getZ() + flameDistanceY);
+            BlockPos flamePos = new BlockPos(this.getX() + flameDistanceX, this.getY(), this.getZ() + flameDistanceY);
+            if (this.level.getBlockState(flamePos).getBlock() == Blocks.AIR &&
+                    this.level.getBlockState(posBelow).getBlock() != Blocks.AIR &&
+                    this.level.getBlockState(posBelow).getBlock() != Blocks.FIRE) {
+                this.level.setBlock(flamePos, Blocks.FIRE.defaultBlockState(), 3);
             }
         }
     }
